@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: url("imgs/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #0a0927;
+    color: white;
+    padding: 20px 50px;
+}
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search-box {
+    background-color: #0a0927;
+    padding: 12px;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+}
+
+.search-input {
+    display: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+}
+
+.search-input::placeholder {
+    color: darkgrey;
+}
+
+#search-icon {
+    color: white;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.search-results {
+    color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.search-result {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 25px 25px;
+    grid-template-areas:
+        "img name"
+        "img price";
+}
+
+.search-result img {
+    grid-area: img;
+    width: 50px;
+    height: 50px;
+    object-fit: scale-down;
+    padding-right: 10px;
+}
+
+.active-search {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.navMenu {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItem {
+    color: lightgray;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+}
+
+.slider-container {
+    display: flex;
+}
+
+#slider {
+    overflow: hidden;
+}
+
+.sliderWrapper {
+    display: flex;
+    width: 500vw;
+    transition: all 1s ease-in-out;
+    
+}
+
+.sliderItem {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sliderImg {
+    position: relative;
+    z-index: -1;
+    max-height: 50%;
+    height: auto;
+}
+
+#hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    width: auto;
+    height: auto;
+    background: #0a0927;
+}
+
+.hamburger-menuItem {
+    padding: 10px;
+    color: lightgray;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+}
+
+.selectedItem {
+    color: rgb(150, 50, 50);
+    font-weight: 900;
+}
+
+footer {
+    position: relative;
+    margin-top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0a0927;
+    color: white;
+    padding: 20px 50px;
+}
+
+.footerItems {
+    width: 100%;
+}
+
+.footerItem {
+    color: lightgray;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a{
+    text-decoration: none;
+    margin: 20px;
+    background-color: #0a0927;
+}
+
+.socialMedia a i{
+    font-size: 1.5rem;
+    color: lightgray;
+    opacity: 0.9;
+}
+
+.socialMedia a:hover{
+    transition: 0.5s;
+}
+
+.socialMedia a:hover i{
+    color: rgb(150, 50, 50);
+    transition: 0.5s;
+}
+
+.helpItems {
+    display: flex;
+    justify-content: center;
+}
+
+.helpItems a{
+    text-decoration: none;
+    padding-inline: 30px;
+}
+
+@media (max-device-width: 500px) {
+    .navMenu {
+        display: none;
+    }
+    #hamburger-button {
+        display: inline-block;
+    }
+    * {
+        font-size: 1.5rem;
+    }
+    .socialMedia a i{
+        font-size: 2rem;
+    }
+}
